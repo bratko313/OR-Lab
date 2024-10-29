@@ -1,0 +1,30 @@
+board_game_id,name,release_year,number_of_players,age,playing_time,franchise_id,publisher_id,franchise_id,name,publisher_id,name,board_game_id,designer_id,designer_id,name,surname,board_game_id,artist_id,artist_id,name,surname
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,1,1,Nikki,Valens,1,3,3,Anders,Finér
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,1,1,Nikki,Valens,1,2,2,W.T.,Arnold
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,1,1,Nikki,Valens,1,1,1,Justin,Adams
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,2,2,Richard,Launius,1,3,3,Anders,Finér
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,2,2,Richard,Launius,1,2,2,W.T.,Arnold
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,2,2,Richard,Launius,1,1,1,Justin,Adams
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,3,3,Kevin,Wilson,1,3,3,Anders,Finér
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,3,3,Kevin,Wilson,1,2,2,W.T.,Arnold
+1,Arkham Horror (Third Edition),2018,1-6,14+,120-180 minutes,2,1,2,Arkham Horror,1,Fantasy Flight Games,1,3,3,Kevin,Wilson,1,1,1,Justin,Adams
+5,Ticket to Ride: Europe,2005,2-5,8+,30-60 minutes,7,6,7,Ticket to Ride,6,Days of Wonder,5,8,8,Alan R.,Moon,5,13,13,Julien,Delval
+5,Ticket to Ride: Europe,2005,2-5,8+,30-60 minutes,7,6,7,Ticket to Ride,6,Days of Wonder,5,8,8,Alan R.,Moon,5,12,12,Cyrille,Daujean
+9,Ticket to Ride,2004,2-5,8+,30-60 minutes,7,6,7,Ticket to Ride,6,Days of Wonder,9,8,8,Alan R.,Moon,9,13,13,Julien,Delval
+9,Ticket to Ride,2004,2-5,8+,30-60 minutes,7,6,7,Ticket to Ride,6,Days of Wonder,9,8,8,Alan R.,Moon,9,12,12,Cyrille,Daujean
+10,Magic: The Gathering - Kaladesh,2016,2+,13+,60 minutes,8,8,8,Magic: The Gathering,8,Wizards of the Coast,10,11,11,Richard,Garfield,,,,,
+10,Magic: The Gathering - Kaladesh,2016,2+,13+,60 minutes,8,8,8,Magic: The Gathering,8,Wizards of the Coast,10,12,12,Ben,Hayes,,,,,
+11,Magic: The Gathering - Amonkhet,2017,2+,13+,60 minutes,8,8,8,Magic: The Gathering,8,Wizards of the Coast,11,11,11,Richard,Garfield,,,,,
+11,Magic: The Gathering - Amonkhet,2017,2+,13+,60 minutes,8,8,8,Magic: The Gathering,8,Wizards of the Coast,11,12,12,Ben,Hayes,,,,,
+13,The Magnificent,2019,1-4,14+,60-90 minutes,11,12,11,The Magnificent,12,Aporta Games,13,17,17,Kristian Amundsen,Østby,13,16,16,Martin,Mottet
+13,The Magnificent,2019,1-4,14+,60-90 minutes,11,12,11,The Magnificent,12,Aporta Games,13,18,18,Eilif,Svensson,13,16,16,Martin,Mottet
+14,Cyclades,2009,2-5,13+,60-90 minutes,12,13,12,Cyclades,13,Matagot,14,19,19,Bruno,Cathala,14,17,17,Miguel,Coimbra
+13,The Magnificent,2019,1-4,14+,60-90 minutes,11,12,11,The Magnificent,12,Aporta Games,13,20,20,Ludovic,Maublanc,13,16,16,Martin,Mottet
+15,Risk,1959,2-6,10+,120 minutes,13,14,13,Risk,14,Parker Brothers,15,21,21,Albert,Lamorisse,,,,,
+13,The Magnificent,2019,1-4,14+,60-90 minutes,11,12,11,The Magnificent,12,Aporta Games,13,22,22,Michael I.,Levin,13,16,16,Martin,Mottet
+17,Terraforming Mars,2016,1-5,12+,120 minutes,15,16,15,Terraforming Mars,16,FryxGames,17,24,24,Jacob,Fryxelius,17,21,21,Daniel,Fryxelius
+17,Terraforming Mars,2016,1-5,12+,120 minutes,15,16,15,Terraforming Mars,16,FryxGames,17,24,24,Jacob,Fryxelius,17,20,20,Isaac,Fryxelius
+18,Terraforming Mars: Colonies,2018,1-5,12+,120 minutes,15,16,15,Terraforming Mars,16,FryxGames,18,24,24,Jacob,Fryxelius,18,22,22,William,Bricker
+18,Terraforming Mars: Colonies,2018,1-5,12+,120 minutes,15,16,15,Terraforming Mars,16,FryxGames,18,24,24,Jacob,Fryxelius,18,20,20,Isaac,Fryxelius
+18,Terraforming Mars: Colonies,2018,1-5,12+,120 minutes,15,16,15,Terraforming Mars,16,FryxGames,18,25,25,Jonathan,Fryxelius,18,22,22,William,Bricker
+18,Terraforming Mars: Colonies,2018,1-5,12+,120 minutes,15,16,15,Terraforming Mars,16,FryxGames,18,25,25,Jonathan,Fryxelius,18,20,20,Isaac,Fryxelius
