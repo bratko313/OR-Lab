@@ -19,7 +19,7 @@ artist_id: jedinstveni identifikator ilustratora igre
 artist_name: ime ilustratora igre   
 artist_surname: prezime ilustratora igre   
 
-Licenca  
+Licenca: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), podatci se mogu kopirati, dijeliti, mijenjati dok god se imenuje autor, dijeli pod istim uvjetima te se ne postavljaju daljnja ograničenja onoga što licenca dopušta  
 Autor: Ivan Bratulić  
 Verzija skupa podataka: 1.0  
 Jezik podataka: Engleski  
