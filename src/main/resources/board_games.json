@@ -1,0 +1,303 @@
+[
+   {
+      "board_game_id":1,
+      "name":"Arkham Horror (Third Edition)",
+      "release_year":2018,
+      "number_of_players":"1-6",
+      "age":"14+",
+      "playing_time":"120-180 minutes",
+      "franchise":{
+         "name":"Arkham Horror"
+      },
+      "publisher":{
+         "name":"Fantasy Flight Games"
+      },
+      "designers":[
+         {
+            "name":"Nikki",
+            "surname":"Valens"
+         },
+         {
+            "name":"Richard",
+            "surname":"Launius"
+         },
+         {
+            "name":"Kevin",
+            "surname":"Wilson"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Justin",
+            "surname":"Adams"
+         },
+         {
+            "name":"W.T.",
+            "surname":"Arnold"
+         },
+         {
+            "name":"Anders",
+            "surname":"Finér"
+         }
+      ]
+   },
+   {
+      "board_game_id":5,
+      "name":"Ticket to Ride: Europe",
+      "release_year":2005,
+      "number_of_players":"2-5",
+      "age":"8+",
+      "playing_time":"30-60 minutes",
+      "franchise":{
+         "name":"Ticket to Ride"
+      },
+      "publisher":{
+         "name":"Days of Wonder"
+      },
+      "designers":[
+         {
+            "name":"Alan R.",
+            "surname":"Moon"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Cyrille",
+            "surname":"Daujean"
+         },
+         {
+            "name":"Julien",
+            "surname":"Delval"
+         }
+      ]
+   },
+   {
+      "board_game_id":9,
+      "name":"Ticket to Ride",
+      "release_year":2004,
+      "number_of_players":"2-5",
+      "age":"8+",
+      "playing_time":"30-60 minutes",
+      "franchise":{
+         "name":"Ticket to Ride"
+      },
+      "publisher":{
+         "name":"Days of Wonder"
+      },
+      "designers":[
+         {
+            "name":"Alan R.",
+            "surname":"Moon"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Cyrille",
+            "surname":"Daujean"
+         },
+         {
+            "name":"Julien",
+            "surname":"Delval"
+         }
+      ]
+   },
+   {
+      "board_game_id":10,
+      "name":"Magic: The Gathering - Kaladesh",
+      "release_year":2016,
+      "number_of_players":"2+",
+      "age":"13+",
+      "playing_time":"60 minutes",
+      "franchise":{
+         "name":"Magic: The Gathering"
+      },
+      "publisher":{
+         "name":"Wizards of the Coast"
+      },
+      "designers":[
+         {
+            "name":"Richard",
+            "surname":"Garfield"
+         },
+         {
+            "name":"Ben",
+            "surname":"Hayes"
+         }
+      ],
+      "artists":null
+   },
+   {
+      "board_game_id":11,
+      "name":"Magic: The Gathering - Amonkhet",
+      "release_year":2017,
+      "number_of_players":"2+",
+      "age":"13+",
+      "playing_time":"60 minutes",
+      "franchise":{
+         "name":"Magic: The Gathering"
+      },
+      "publisher":{
+         "name":"Wizards of the Coast"
+      },
+      "designers":[
+         {
+            "name":"Richard",
+            "surname":"Garfield"
+         },
+         {
+            "name":"Ben",
+            "surname":"Hayes"
+         }
+      ],
+      "artists":null
+   },
+   {
+      "board_game_id":13,
+      "name":"The Magnificent",
+      "release_year":2019,
+      "number_of_players":"1-4",
+      "age":"14+",
+      "playing_time":"60-90 minutes",
+      "franchise":{
+         "name":"The Magnificent"
+      },
+      "publisher":{
+         "name":"Aporta Games"
+      },
+      "designers":[
+         {
+            "name":"Kristian Amundsen",
+            "surname":"Østby"
+         },
+         {
+            "name":"Eilif",
+            "surname":"Svensson"
+         },
+         {
+            "name":"Ludovic",
+            "surname":"Maublanc"
+         },
+         {
+            "name":"Michael I.",
+            "surname":"Levin"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Martin",
+            "surname":"Mottet"
+         }
+      ]
+   },
+   {
+      "board_game_id":14,
+      "name":"Cyclades",
+      "release_year":2009,
+      "number_of_players":"2-5",
+      "age":"13+",
+      "playing_time":"60-90 minutes",
+      "franchise":{
+         "name":"Cyclades"
+      },
+      "publisher":{
+         "name":"Matagot"
+      },
+      "designers":[
+         {
+            "name":"Bruno",
+            "surname":"Cathala"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Miguel",
+            "surname":"Coimbra"
+         }
+      ]
+   },
+   {
+      "board_game_id":15,
+      "name":"Risk",
+      "release_year":1959,
+      "number_of_players":"2-6",
+      "age":"10+",
+      "playing_time":"120 minutes",
+      "franchise":{
+         "name":"Risk"
+      },
+      "publisher":{
+         "name":"Parker Brothers"
+      },
+      "designers":[
+         {
+            "name":"Albert",
+            "surname":"Lamorisse"
+         }
+      ],
+      "artists":null
+   },
+   {
+      "board_game_id":17,
+      "name":"Terraforming Mars",
+      "release_year":2016,
+      "number_of_players":"1-5",
+      "age":"12+",
+      "playing_time":"120 minutes",
+      "franchise":{
+         "name":"Terraforming Mars"
+      },
+      "publisher":{
+         "name":"FryxGames"
+      },
+      "designers":[
+         {
+            "name":"Jacob",
+            "surname":"Fryxelius"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Isaac",
+            "surname":"Fryxelius"
+         },
+         {
+            "name":"Daniel",
+            "surname":"Fryxelius"
+         }
+      ]
+   },
+   {
+      "board_game_id":18,
+      "name":"Terraforming Mars: Colonies",
+      "release_year":2018,
+      "number_of_players":"1-5",
+      "age":"12+",
+      "playing_time":"120 minutes",
+      "franchise":{
+         "name":"Terraforming Mars"
+      },
+      "publisher":{
+         "name":"FryxGames"
+      },
+      "designers":[
+         {
+            "name":"Jacob",
+            "surname":"Fryxelius"
+         },
+         {
+            "name":"Jonathan",
+            "surname":"Fryxelius"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Isaac",
+            "surname":"Fryxelius"
+         },
+         {
+            "name":"William",
+            "surname":"Bricker"
+         }
+      ]
+   }
+]
