@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/bratko313/OR-Lab",
+  "type": "array",
+  "title": "OR Društvene igre",
+  "description": "Skup filmova za otvoreno računarstvo",
+  "items": {
+    "type": "object",
+    "title": "Društvena igra",
+    "description": "Skup društvenih igara za otvoreno računarstvo",
+    "required": ["Naziv"],
+    "properties": {
+      "Naziv": {
+        "type": "string",
+        "title": "Naziv",
+        "description": "Naziv društvene igre"
+      },
+      "Godina izdanja": {
+        "type": "integer",
+        "title": "Godina izdanja",
+        "description": "Godina u kojoj je društvena igra izdana"
+      },
+      "Broj igrača": {
+        "type": "string",
+        "title": "Broj igrača",
+        "description": "Namijenjeni broj igrača"
+      },
+      "Dob": {
+        "type": "string",
+        "title": "Dob",
+        "description": "Preporučena dob igrača"
+      },
+      "Vrijeme igranja": {
+        "type": "string",
+        "title": "Vrijeme igranja",
+        "description": "Prosječno vrijeme igranja"
+      },
+      "Franšiza": {
+        "type": "string",
+        "title": "Franšiza",
+        "description": "Naziv franšize kojoj društvena igra pripada"
+      },
+      "Izdavač": {
+        "type": "string",
+        "title": "Izdavač",
+        "description": "Naziv izdavača društvene igre"
+      },
+      "Dizajner(i)": {
+        "type": "string",
+        "title": "Dizajneri",
+        "description": "Imena i prezimena dizajnera društvene igre"
+      },
+      "Slikar(i)": {
+        "type": "string",
+        "title": "Slikar(i)",
+        "description": "Imena i prezimena slikara društvene igre"
+      }
+    }
+  }
+}
