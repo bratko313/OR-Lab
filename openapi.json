@@ -1,0 +1,440 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "API za upravljanje društvenim igrama",
+    "version": "3.0",
+    "description": "API for managing artists, franchises, publishers, board games, and designers.",
+	"contact": [
+		"email": "ivan.bratulic@fer.hr"
+	],
+	"license": [
+		"name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+		"url": https://creativecommons.org/licenses/by-sa/4.0/deed.en
+	]
+  },
+  "paths": {
+    "/artists": {
+      "get": {
+        "summary": "Get all artists",
+        "operationId": "getAllArtists",
+        "responses": {
+          "200": {
+            "description": "List of all artists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Artist"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/artists/{id}": {
+      "get": {
+        "summary": "Get artist by ID",
+        "operationId": "getArtistById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Artist details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Artist"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Artist with the provided ID doesn't exist"
+          }
+        }
+      }
+    },
+	"/designers": {
+      "get": {
+        "summary": "Get all designers",
+        "operationId": "getAllDesigners",
+        "responses": {
+          "200": {
+            "description": "List of all designers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Designer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/designers/{id}": {
+      "get": {
+        "summary": "Get designer by ID",
+        "operationId": "getDesignerById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Designer details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Designer"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Designer with the provided ID doesn't exist"
+          }
+        }
+      }
+    },
+    "/franchises": {
+      "get": {
+        "summary": "Get all franchises",
+        "operationId": "getAllFranchises",
+        "responses": {
+          "200": {
+            "description": "List of all franchises",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Franchise"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/franchises/{id}": {
+      "get": {
+        "summary": "Get franchise by ID",
+        "operationId": "getFranchiseById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Franchise details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Franchise"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Franchise with the provided ID doesn't exist"
+          }
+        }
+      }
+    },
+	"/publishers": {
+      "get": {
+        "summary": "Get all publishers",
+        "operationId": "getAllPublishers",
+        "responses": {
+          "200": {
+            "description": "List of all publishers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Publishers"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/publishers/{id}": {
+      "get": {
+        "summary": "Get publishers by ID",
+        "operationId": "getPublishersById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "publishers details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Publishers"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Publisher with the provided ID doesn't exist"
+          }
+        }
+      }
+    },
+    "/boardGames/add": {
+      "post": {
+        "summary": "Add a new board game",
+        "operationId": "addBoardGame",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BoardGameDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Board game added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BoardGame"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/boardGames/delete/{id}": {
+      "delete": {
+        "summary": "Delete a board game by ID",
+        "operationId": "deleteBoardGame",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Board game deleted successfully"
+          },
+          "404": {
+            "description": "Board game with the provided ID doesn't exist"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Artist": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Justin"
+          },
+		  "surname": {
+			"type": "string",
+			"example": "Adams"
+		  }
+        }
+      },
+	  "Designer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Nikki"
+          },
+		  "surname": {
+			"type": "string",
+			"example": "Valens"
+		  }
+        }
+      },
+      "Franchise": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Arkham Horror"
+          }
+        }
+      },
+	  "Publisher": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Fantasy Flight Games"
+          }
+        }
+      },
+      "BoardGame": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Arkham Horror (Third Edition)"
+          },
+          "releaseYear": {
+            "type": "integer",
+            "example": 2018
+          },
+          "numberOfPlayers": {
+            "type": "string",
+            "example": "1-6"
+          },
+          "age": {
+            "type": "string",
+            "example": "14+"
+          },
+          "playingTime": {
+            "type": "string",
+            "example": "120-180 minutes"
+          },
+          "franchise": {
+            "$ref": "#/components/schemas/Franchise"
+          },
+          "publisher": {
+            "$ref": "#/components/schemas/Publisher"
+          },
+          "artists": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Artist"
+            }
+          },
+          "designers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Designer"
+            }
+          }
+        },
+        "required": ["id"]
+      },
+      "BoardGameDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Arkham Horror (Third Edition)"
+          },
+          "releaseYear": {
+            "type": "integer",
+            "example": 2018
+          },
+          "numberOfPlayers": {
+            "type": "string",
+            "example": "1-6"
+          },
+          "age": {
+            "type": "string",
+            "example": "14+"
+          },
+          "playingTime": {
+            "type": "string",
+            "example": "120-180 minutes"
+          },
+          "franchiseId": {
+            "type": "integer",
+            "example": 1
+          },
+          "publisherId": {
+            "type": "integer",
+            "example": 1
+          },
+          "artistIds": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "example": [1, 2, 3]
+          },
+          "designerIds": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "example": [1, 2, 3]
+          }
+        }
+      }
+    }
+  }
+}
