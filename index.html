@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +17,21 @@
     <style>h1 {text-align: center;}</style>
 </head>
 <body>
-    <h1><a href="http://localhost:8080/boardgames/data.csv">CSV</a></h1>
-    <h1><a href="http://localhost:8080/boardgames/data.json">JSON</a></h1>
-    <h1><a href="datatable.html">Data Table</a></h1>
+    <div sec:authorize="!isAuthenticated()">
+        <h1><a th:href="@{/prijava}">Prijava</a></h1>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+        <h1><a th:href="@{/korisnik}">Korisnički profil</a></h1>
+        <h1>
+            <form th:action="@{/osvjeziPreslike}" method="post" style="display:inline;">
+                <button type="submit" style="all: unset; cursor: pointer; color: inherit; text-decoration: underline;">Osvježi preslike</button>
+            </form>
+        </h1>
+    </div>
+    <div>
+        <h1><a href="http://localhost:8080/boardGames/data.csv">CSV</a></h1>
+        <h1><a href="http://localhost:8080/boardGames/data.json">JSON</a></h1>
+        <h1><a href="http://localhost:8080/boardGames/datatable">Data Table</a></h1>
+    </div>
 </body>
 </html>
