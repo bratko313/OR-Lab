@@ -1,21 +1,35 @@
 package fer.or.api.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import fer.or.api.dto.BoardGameDTO;
 import fer.or.api.model.*;
 import fer.or.api.service.*;
+import fer.or.api.util.FileUtil;
 import fer.or.api.util.HeaderUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@RestController
+@Controller
 public class ApiController {
     @Autowired
     private ArtistService artistService;
@@ -31,18 +45,35 @@ public class ApiController {
     @Value("classpath:openapi.json")
     Resource openApiJson;
 
+    @Value("classpath:data.csv")
+    Resource dataCsv;
+
+    @Value("classpath:data.json")
+    Resource dataJson;
+
     @GetMapping("/artists")
     public ResponseEntity<List<Artist>> getAllArtists() {
         return ResponseEntity.ok().headers(HeaderUtil.createHeaders("OK", "All artists fetched"))
                 .body(artistService.getAllArtists());
     }
 
-    @GetMapping("/artists/{id}")
-    public ResponseEntity<Artist> getArtistById(@PathVariable int id) {
+    @GetMapping(value = "/artists/{id}", produces = "application/json")
+    public ResponseEntity<?> getArtistById(@PathVariable int id) throws JsonProcessingException {
         Optional<Artist> artist = artistService.getArtistById(id);
 
-        return artist.map(art -> ResponseEntity.ok().headers(HeaderUtil.createHeaders("OK", "Artist fetched")).body(art))
-                .orElseGet(() -> ResponseEntity.notFound().headers(HeaderUtil.createHeaders("Not found", "Artist with the provided ID doesn't exist")).build());
+        if(artist.isEmpty()) {
+            return ResponseEntity.notFound().headers(HeaderUtil.createHeaders("Not found", "Artist with the provided ID doesn't exist")).build();
+        }
+
+        String context = "\"@context\":{" +
+                "\"@vocab\":\"https://schema.org/\"," +
+                "\"name\":\"givenName\"," +
+                "\"surname\":\"familyName\"},";
+        ObjectMapper mapper = new ObjectMapper();
+        String artistStr = mapper.writeValueAsString(artist.get());
+
+        return ResponseEntity.ok().headers(HeaderUtil.createHeaders("OK", "Artist fetched"))
+                .body("{" + context + artistStr + "}");
     }
 
     @GetMapping("/franchises")
@@ -82,7 +113,6 @@ public class ApiController {
     @GetMapping("/boardGames/{id}")
     public ResponseEntity<BoardGame> getBoardGameById(@PathVariable int id) {
         Optional<BoardGame> boardGame = boardGameService.getBoardGameById(id);
-        ResponseEntity<BoardGame> response;
 
         return boardGame.map(game -> ResponseEntity.ok().headers(HeaderUtil.createHeaders("OK", "Board game fetched")).body(game))
                 .orElseGet(() -> ResponseEntity.notFound().headers(HeaderUtil.createHeaders("Not found", "Board game with the provided ID doesn't exist")).build());
@@ -94,12 +124,23 @@ public class ApiController {
                 .body(designerService.getAllDesigners());
     }
 
-    @GetMapping("/designers/{id}")
-    public ResponseEntity<Designer> getDesignerById(@PathVariable int id) {
+    @GetMapping(value = "/designers/{id}", produces = "application/json")
+    public ResponseEntity<?> getDesignerById(@PathVariable int id) throws JsonProcessingException {
         Optional<Designer> designer = designerService.getDesignerById(id);
 
-        return designer.map(dsgnr -> ResponseEntity.ok().headers(HeaderUtil.createHeaders("OK", "Designer fetched")).body(dsgnr))
-                .orElseGet(() -> ResponseEntity.notFound().headers(HeaderUtil.createHeaders("Not found", "Designer with the provided ID doesn't exist")).build());
+        if(designer.isEmpty()) {
+            return ResponseEntity.notFound().headers(HeaderUtil.createHeaders("Not found", "Designer with the provided ID doesn't exist")).build();
+        }
+
+        String context = "\"@context\":{" +
+                "\"@vocab\":\"https://schema.org/\"," +
+                "\"name\":\"givenName\"," +
+                "\"surname\":\"familyName\"},";
+        ObjectMapper mapper = new ObjectMapper();
+        String designerStr = mapper.writeValueAsString(designer.get());
+
+        return ResponseEntity.ok().headers(HeaderUtil.createHeaders("OK", "Designer fetched"))
+                .body("{" + context + designerStr + "}");
     }
 
     @PostMapping(path = "/boardGames/add", produces = "application/json")
@@ -163,13 +204,109 @@ public class ApiController {
         return ResponseEntity.ok().headers(HeaderUtil.createHeaders("OK", "Board game updated")).body(boardGame);
     }
 
-    @GetMapping("openAPI/specification")
-    public ResponseEntity<String> getOpenAPISpecification() throws IOException {
-        String body = "";
+    @GetMapping("/boardGames/datatable")
+    public String datatable(Model model, @AuthenticationPrincipal OidcUser principal) {
+        if (principal != null) {
+            model.addAttribute("profile", principal.getClaims());
+        }
+        return "datatable";
+    }
 
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(openApiJson.getInputStream(), "UTF-8"))) {
+    @GetMapping("/openAPI/specification")
+    public ResponseEntity<String> getOpenAPISpecification() throws IOException {
+        String body;
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(openApiJson.getInputStream(), StandardCharsets.UTF_8))) {
             body = br.lines().collect(Collectors.joining("\n"));
         }
         return ResponseEntity.ok().headers(HeaderUtil.createHeaders("OK", "OpenAPI specification fetched")).body(body);
+    }
+
+    @GetMapping(
+            value = "/boardGames/data.csv",
+            produces = MediaType.APPLICATION_OCTET_STREAM_VALUE
+    )
+    public ResponseEntity<InputStreamResource> getDataCsv() throws IOException {
+        Resource resource = new ClassPathResource("/data.csv");
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=data.csv");
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(new InputStreamResource(resource.getInputStream()));
+    }
+
+    @GetMapping(
+            value = "/boardGames/data.json",
+            produces = MediaType.APPLICATION_OCTET_STREAM_VALUE
+    )
+    public ResponseEntity<InputStreamResource> getDataJson() throws IOException {
+        Resource resource = new ClassPathResource("/data.json");
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=data.json");
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(new InputStreamResource(resource.getInputStream()));
+    }
+
+    @GetMapping("/")
+    public String home(Model model, @AuthenticationPrincipal OidcUser principal) {
+        if (principal != null) {
+            model.addAttribute("profile", principal.getClaims());
+        }
+        return "index";
+    }
+
+    @GetMapping("/korisnik")
+    public String user(Model model, @AuthenticationPrincipal OidcUser principal) {
+        if (principal != null) {
+            model.addAttribute("profile", principal.getClaims());
+        }
+        return "korisnik";
+    }
+
+    @GetMapping("/prijava")
+    public String login(Model model, @AuthenticationPrincipal OidcUser principal) {
+        if (principal != null) {
+            model.addAttribute("profile", principal.getClaims());
+        }
+        return "redirect";
+    }
+
+    @PostMapping("/osvjeziPreslike")
+    public String refreshFiles(Model model, @AuthenticationPrincipal OidcUser principal) throws IOException {
+        if(principal != null) {
+            model.addAttribute("profile", principal.getClaims());
+        }
+
+        List<BoardGame> boardGames = boardGameService.getAllBoardGames();
+        ObjectMapper mapper = new ObjectMapper();
+
+        String newJson = mapper.writeValueAsString(boardGames);
+
+        FileUtil.overwriteFileWithString(dataJson, newJson);
+
+        String newCsv = "board_game_id,name,release_year," +
+                "number_of_players,age,playing_time," +
+                "franchise_id,franchise_name," +
+                "publisher_id,publisher_name," +
+                "designer_id,designer_name,designer_surname," +
+                "artist_id,artist_name,artist_surname\n";
+
+        for(BoardGame boardGame : boardGames)
+            for(Artist artist : boardGame.getArtists())
+                for(Designer designer : boardGame.getDesigners())
+                    newCsv += boardGame.getId() + "," + boardGame.getName() + "," + boardGame.getReleaseYear() + "," +
+                        boardGame.getNumberOfPlayers() + boardGame.getAge() + boardGame.getPlayingTime() +
+                        boardGame.getFranchise().getId() + boardGame.getFranchise().getName() +
+                        boardGame.getPublisher().getId() + boardGame.getPublisher().getName() +
+                        designer.getName() + designer.getName() + designer.getSurname() +
+                        artist.getId() + artist.getName() + artist.getSurname() + "\n";
+
+        FileUtil.overwriteFileWithString(dataCsv, newCsv);
+        return "redirect";
     }
 }

@@ -1,0 +1,399 @@
+[
+    {
+        "id": 5,
+        "name": "Ticket to Ride: Europe",
+        "releaseYear": 2005,
+        "numberOfPlayers": "2-5",
+        "age": "8+",
+        "playingTime": "30-60 minutes",
+        "franchise": {
+            "id": 7,
+            "name": "Ticket to Ride"
+        },
+        "publisher": {
+            "id": 6,
+            "name": "Days of Wonder"
+        },
+        "artists": [
+            {
+                "id": 12,
+                "name": "Cyrille",
+                "surname": "Daujean"
+            },
+            {
+                "id": 13,
+                "name": "Julien",
+                "surname": "Delval"
+            }
+        ],
+        "designers": [
+            {
+                "id": 8,
+                "name": "Alan R.",
+                "surname": "Moon"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Ticket to Ride",
+        "releaseYear": 2004,
+        "numberOfPlayers": "2-5",
+        "age": "8+",
+        "playingTime": "30-60 minutes",
+        "franchise": {
+            "id": 7,
+            "name": "Ticket to Ride"
+        },
+        "publisher": {
+            "id": 6,
+            "name": "Days of Wonder"
+        },
+        "artists": [
+            {
+                "id": 12,
+                "name": "Cyrille",
+                "surname": "Daujean"
+            },
+            {
+                "id": 13,
+                "name": "Julien",
+                "surname": "Delval"
+            }
+        ],
+        "designers": [
+            {
+                "id": 8,
+                "name": "Alan R.",
+                "surname": "Moon"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Magic: The Gathering - Kaladesh",
+        "releaseYear": 2016,
+        "numberOfPlayers": "2+",
+        "age": "13+",
+        "playingTime": "60 minutes",
+        "franchise": {
+            "id": 8,
+            "name": "Magic: The Gathering"
+        },
+        "publisher": {
+            "id": 8,
+            "name": "Wizards of the Coast"
+        },
+        "artists": [],
+        "designers": [
+            {
+                "id": 11,
+                "name": "Richard",
+                "surname": "Garfield"
+            },
+            {
+                "id": 12,
+                "name": "Ben",
+                "surname": "Hayes"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Magic: The Gathering - Amonkhet",
+        "releaseYear": 2017,
+        "numberOfPlayers": "2+",
+        "age": "13+",
+        "playingTime": "60 minutes",
+        "franchise": {
+            "id": 8,
+            "name": "Magic: The Gathering"
+        },
+        "publisher": {
+            "id": 8,
+            "name": "Wizards of the Coast"
+        },
+        "artists": [],
+        "designers": [
+            {
+                "id": 11,
+                "name": "Richard",
+                "surname": "Garfield"
+            },
+            {
+                "id": 12,
+                "name": "Ben",
+                "surname": "Hayes"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "The Magnificent",
+        "releaseYear": 2019,
+        "numberOfPlayers": "1-4",
+        "age": "14+",
+        "playingTime": "60-90 minutes",
+        "franchise": {
+            "id": 11,
+            "name": "The Magnificent"
+        },
+        "publisher": {
+            "id": 12,
+            "name": "Aporta Games"
+        },
+        "artists": [
+            {
+                "id": 16,
+                "name": "Martin",
+                "surname": "Mottet"
+            }
+        ],
+        "designers": [
+            {
+                "id": 17,
+                "name": "Kristian Amundsen",
+                "surname": "Østby"
+            },
+            {
+                "id": 18,
+                "name": "Eilif",
+                "surname": "Svensson"
+            },
+            {
+                "id": 20,
+                "name": "Ludovic",
+                "surname": "Maublanc"
+            },
+            {
+                "id": 22,
+                "name": "Michael I.",
+                "surname": "Levin"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Cyclades",
+        "releaseYear": 2009,
+        "numberOfPlayers": "2-5",
+        "age": "13+",
+        "playingTime": "60-90 minutes",
+        "franchise": {
+            "id": 12,
+            "name": "Cyclades"
+        },
+        "publisher": {
+            "id": 13,
+            "name": "Matagot"
+        },
+        "artists": [
+            {
+                "id": 17,
+                "name": "Miguel",
+                "surname": "Coimbra"
+            }
+        ],
+        "designers": [
+            {
+                "id": 19,
+                "name": "Bruno",
+                "surname": "Cathala"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Risk",
+        "releaseYear": 1959,
+        "numberOfPlayers": "2-6",
+        "age": "10+",
+        "playingTime": "120 minutes",
+        "franchise": {
+            "id": 13,
+            "name": "Risk"
+        },
+        "publisher": {
+            "id": 14,
+            "name": "Parker Brothers"
+        },
+        "artists": [],
+        "designers": [
+            {
+                "id": 21,
+                "name": "Albert",
+                "surname": "Lamorisse"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Terraforming Mars",
+        "releaseYear": 2016,
+        "numberOfPlayers": "1-5",
+        "age": "12+",
+        "playingTime": "120 minutes",
+        "franchise": {
+            "id": 15,
+            "name": "Terraforming Mars"
+        },
+        "publisher": {
+            "id": 16,
+            "name": "FryxGames"
+        },
+        "artists": [
+            {
+                "id": 20,
+                "name": "Isaac",
+                "surname": "Fryxelius"
+            },
+            {
+                "id": 21,
+                "name": "Daniel",
+                "surname": "Fryxelius"
+            }
+        ],
+        "designers": [
+            {
+                "id": 24,
+                "name": "Jacob",
+                "surname": "Fryxelius"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Terraforming Mars: Colonies",
+        "releaseYear": 2018,
+        "numberOfPlayers": "1-5",
+        "age": "12+",
+        "playingTime": "120 minutes",
+        "franchise": {
+            "id": 15,
+            "name": "Terraforming Mars"
+        },
+        "publisher": {
+            "id": 16,
+            "name": "FryxGames"
+        },
+        "artists": [
+            {
+                "id": 20,
+                "name": "Isaac",
+                "surname": "Fryxelius"
+            },
+            {
+                "id": 22,
+                "name": "William",
+                "surname": "Bricker"
+            }
+        ],
+        "designers": [
+            {
+                "id": 24,
+                "name": "Jacob",
+                "surname": "Fryxelius"
+            },
+            {
+                "id": 25,
+                "name": "Jonathan",
+                "surname": "Fryxelius"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Arkham Horror (Third Edition)",
+        "releaseYear": 2018,
+        "numberOfPlayers": "1-6",
+        "age": "14+",
+        "playingTime": "120-180 minutes",
+        "franchise": {
+            "id": 2,
+            "name": "Arkham Horror"
+        },
+        "publisher": {
+            "id": 1,
+            "name": "Fantasy Flight Games"
+        },
+        "artists": [
+            {
+                "id": 1,
+                "name": "Justin",
+                "surname": "Adams"
+            },
+            {
+                "id": 2,
+                "name": "W.T.",
+                "surname": "Arnold"
+            },
+            {
+                "id": 3,
+                "name": "Anders",
+                "surname": "Finér"
+            }
+        ],
+        "designers": [
+            {
+                "id": 1,
+                "name": "Nikki",
+                "surname": "Valens"
+            },
+            {
+                "id": 2,
+                "name": "Richard",
+                "surname": "Launius"
+            },
+            {
+                "id": 3,
+                "name": "Kevin",
+                "surname": "Wilson"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "name": "FER game - ispravljeno",
+        "releaseYear": 1999,
+        "numberOfPlayers": "3-6",
+        "age": "10+",
+        "playingTime": "50-70 minutes",
+        "franchise": {
+            "id": 13,
+            "name": "Risk"
+        },
+        "publisher": {
+            "id": 14,
+            "name": "Parker Brothers"
+        },
+        "artists": [
+            {
+                "id": 13,
+                "name": "Julien",
+                "surname": "Delval"
+            },
+            {
+                "id": 16,
+                "name": "Martin",
+                "surname": "Mottet"
+            },
+            {
+                "id": 17,
+                "name": "Miguel",
+                "surname": "Coimbra"
+            }
+        ],
+        "designers": [
+            {
+                "id": 18,
+                "name": "Eilif",
+                "surname": "Svensson"
+            },
+            {
+                "id": 19,
+                "name": "Bruno",
+                "surname": "Cathala"
+            }
+        ]
+    }
+]

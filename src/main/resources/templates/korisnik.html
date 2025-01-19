@@ -1,0 +1,16 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body>
+<div sec:authorize="isAuthenticated()">
+    <a th:href="@{/odjava}">Odjava</a>
+    <br>
+    <img th:src="${profile['picture']}" alt="User Picture" style="width:100px;height:100px;"/>
+
+    <ul>
+        <li th:each="entry : ${profile}">
+            <strong th:text="${entry.key}">Key</strong>:
+            <span th:text="${entry.value}">Value</span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
